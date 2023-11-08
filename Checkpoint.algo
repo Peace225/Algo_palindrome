@@ -1,0 +1,49 @@
+ALGORITHM EstPalindrome (mot)
+//Supprimer les espaces et convertir en minuscules pour une comparaison insensible à la casse
+mot <- Remplacer(mot, " ","")
+mot <- minuscules(mot)
+//Vérifier si le mot est vide ou a un seul caractère
+SI Longueur(mot) <= 1 ALORS
+Retourner Vrai // Un mot vide ou un mot d_un seul caractère est un EstPalindrome
+FIN SI
+
+gauche < -1
+droite < - Longueur(mot)
+TantQue gauche < droite
+SI mot |[gauche] ≠ mot[droite] 
+ALORS
+Retourner Faux 
+//Les caracteres ne correspondant pas, le mot n'est pas un palindrome
+FIN SI
+gauche <- gauche + 1
+droite <- droite -1
+FIN TantQue
+Retourner Vrai
+//Le mot est un palindrome
+Fin Algorithme
+VAR
+    //Déclararer les variables
+    mot1: Chaine de caracteres;
+    mot2: Chaine de caracteres;
+    mot3: Chaine de caracteres;
+    mot4: Chaine de caracteres;
+BEGIN
+    //Initialiser les mots
+    mot1 <- "gag"
+    mot2 <- "kayak"
+    mot3 <- "php"
+    mot4 <- "radar"
+    //Appeler l'algorithme
+    EstPalindrome pour chaque mot 
+    SI EstPalindrome(mot1) ALORS
+    AFFICHER "mot1 est un palindrome"
+    SINON
+    AFFICHER "mot1 n'est pas un palindrome"
+    FIN SI
+
+    SI EstPalindrome(mot2) ALORS
+    AFFICHER "mot2 est un palindrome"
+    SINON
+    AFFICHE "mot2 n'est pas un palindrome"
+    FIN SI
+END

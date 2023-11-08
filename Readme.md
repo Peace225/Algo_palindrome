@@ -1,0 +1,1 @@
+cet exercice nous pousses a testée et lire un mot palindrome
